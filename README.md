@@ -1,17 +1,5 @@
-# Shaninath Pawar — Portfolio
+#  Portfolio
 ### Angular 19 · NgRx SignalStore · Signals · Standalone Components
-
----
-
-## 🚀 Quick Start
-
-```bash
-npm install
-ng serve          # → http://localhost:4200
-ng build          # production build → /dist
-```
-
----
 
 ## 🗂 Project Structure
 
@@ -43,30 +31,6 @@ src/
 
 ---
 
-## ✏️ Updating Your Content
-
-All content lives in **`src/app/store/portfolio.data.ts`**.  
-Edit the `INITIAL_PORTFOLIO_STATE` object — no hunting through templates.
-
-```ts
-// Add a new job:
-experience: [
-  {
-    period: 'Jan 2026 — Present',
-    role: 'Staff Engineer',
-    company: 'New Company',
-    ...
-  },
-  // existing entries...
-]
-
-// Add a project:
-projects: [
-  { name: 'New Project', featured: true, ... },
-]
-```
-
----
 
 ## ⚡ Angular 19 Features Used
 
@@ -82,25 +46,3 @@ projects: [
 | **`@HostListener`** | Nav scroll + cursor mouse tracking |
 
 ---
-
-## 🎨 Design Tokens
-
-Edit CSS variables in `src/assets/styles/main.scss`:
-
-```scss
---accent:  #5b8aff;   // Primary blue
---teal:    #2de2c5;   // Secondary teal
---bg:      #07090f;   // Page background
---surface: #111522;   // Card background
-```
-
----
-
-## 🌐 Deploy
-
-```bash
-ng build
-# Upload /dist/shaninath-portfolio to Netlify, Vercel, or GitHub Pages
-```
-
-For GitHub Pages, add `"baseHref": "/repo-name/"` in `angular.json` build options.
