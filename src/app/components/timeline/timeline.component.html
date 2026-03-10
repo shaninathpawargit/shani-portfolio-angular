@@ -1,0 +1,80 @@
+<section class="section-pad timeline-section" id="experience">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">// 02</span>
+      <h2 class="section-title">Timeline</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <!-- Tab switcher -->
+    <div class="tabs">
+      <button class="tab-btn" [class.active]="store.isExperienceTab()"
+              (click)="setTab('experience')">
+        <span class="tab-icon">◈</span> Experience
+      </button>
+      <button class="tab-btn" [class.active]="store.isEducationTab()"
+              (click)="setTab('education')">
+        <span class="tab-icon">◎</span> Education
+      </button>
+    </div>
+
+    <!-- Experience -->
+    <div class="timeline" *ngIf="store.isExperienceTab()">
+      <div class="tl-item"
+           *ngFor="let item of store.experience(); let i = index; let last = last"
+           [style.animation-delay]="i * 0.12 + 's'">
+        <div class="tl-spine">
+          <div class="tl-dot" [class.current]="item.current"></div>
+          <div class="tl-line" *ngIf="!last"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-period">{{ item.period }}</div>
+          <div class="tl-card card">
+            <div class="tl-card-top">
+              <div>
+                <div class="tl-role">{{ item.role }}</div>
+                <div class="tl-company">
+                  {{ item.company }}
+                  <span class="tl-client">· {{ item.client }}</span>
+                </div>
+              </div>
+              <span class="tag teal" *ngIf="item.current">Current</span>
+            </div>
+            <ul class="tl-highlights">
+              <li *ngFor="let h of item.highlights">
+                <span class="tl-bullet">▸</span>{{ h }}
+              </li>
+            </ul>
+            <div class="tl-chips">
+              <span class="tag muted" *ngFor="let t of item.tech">{{ t }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="timeline" *ngIf="store.isEducationTab()">
+      <div class="tl-item"
+           *ngFor="let item of store.education(); let i = index"
+           [style.animation-delay]="i * 0.12 + 's'">
+        <div class="tl-spine">
+          <div class="tl-dot edu"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-period edu-period">{{ item.period }}</div>
+          <div class="tl-card card">
+            <div class="tl-role">{{ item.degree }}</div>
+            <div class="tl-company">{{ item.institution }}</div>
+            <div class="edu-meta">
+              <span class="edu-meta-item"><span class="edu-icon">◎</span> {{ item.location }}</span>
+              <span class="edu-meta-item"><span class="edu-icon">★</span> GPA: {{ item.gpa }}</span>
+            </div>
+            <p class="tl-detail">{{ item.detail }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

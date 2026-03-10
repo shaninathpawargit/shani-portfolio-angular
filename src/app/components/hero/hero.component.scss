@@ -1,0 +1,129 @@
+.hero { padding-top: 140px; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-left { display: flex; flex-direction: column; gap: 28px; }
+
+.hero-badge {
+  width: fit-content; display: flex; align-items: center; gap: 10px;
+}
+.badge-pulse {
+  width: 7px; height: 7px; background: var(--accent);
+  border-radius: 50%;
+  animation: pulsate 2s infinite;
+}
+@keyframes pulsate {
+  0%,100% { box-shadow: 0 0 0 0 rgba(91,138,255,.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(91,138,255,0); }
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
+  line-height: .95;
+  letter-spacing: -.035em;
+}
+.name-serif {
+  display: block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.05em;
+  color: var(--accent);
+}
+
+.hero-tagline {
+  font-family: var(--font-display);
+  font-size: .85rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero-summary {
+  font-size: .82rem; line-height: 1.9;
+  color: var(--text-dim); max-width: 520px;
+}
+
+.hero-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.stat { display: flex; flex-direction: column; gap: 3px; }
+.stat-value {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 1.6rem; color: var(--teal); letter-spacing: -.02em;
+}
+.stat-label {
+  font-size: .6rem; color: var(--muted);
+  letter-spacing: .1em; text-transform: uppercase; line-height: 1.3;
+}
+
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Profile Card */
+.profile-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px; overflow: hidden;
+}
+.pc-glow {
+  position: absolute; top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(91,138,255,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.pc-avatar {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--teal));
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 800;
+  font-size: 1.6rem; color: var(--bg);
+  margin-bottom: 16px; position: relative; z-index: 1;
+}
+.pc-name { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; margin-bottom: 3px; }
+.pc-role { font-size: .7rem; color: var(--accent); letter-spacing: .04em; }
+.pc-company { font-size: .65rem; color: var(--muted); margin-bottom: 18px; }
+.pc-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 22px; }
+
+.pc-achievements {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 22px;
+}
+.achievement {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 12px;
+}
+.achievement-value {
+  display: block; font-family: var(--font-display); font-weight: 700;
+  font-size: 1.05rem; color: var(--teal); line-height: 1; margin-bottom: 4px;
+}
+.achievement-label { font-size: .58rem; color: var(--muted); line-height: 1.3; }
+
+.pc-links { display: flex; flex-direction: column; gap: 8px; }
+.pc-link {
+  display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); font-size: .68rem; color: var(--text-dim);
+  transition: var(--transition);
+}
+.pc-link:hover { border-color: var(--accent); color: var(--accent); }
+.pc-link-icon {
+  width: 28px; height: 28px; background: var(--accent-dim);
+  border-radius: 5px; display: flex; align-items: center; justify-content: center;
+  font-size: .6rem; color: var(--accent); font-family: var(--font-display); font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+}

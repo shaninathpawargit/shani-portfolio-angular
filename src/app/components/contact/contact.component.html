@@ -1,0 +1,67 @@
+<section class="section-pad" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">// 05</span>
+      <h2 class="section-title">Contact</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-left">
+        <h2 class="contact-headline">
+          Let's build<br/>
+          <em class="contact-em">something great.</em>
+        </h2>
+        <p class="contact-body">
+          Open to senior frontend engineering roles, architecture consulting, and high-impact Angular projects.
+          Based in Pune, India — available globally for remote opportunities.
+        </p>
+        <div class="contact-links">
+          <a class="contact-link" *ngFor="let link of contactLinks"
+             [href]="link.href" target="_blank">
+            <div class="cl-icon">{{ link.icon }}</div>
+            <div class="cl-text">
+              <span class="cl-label">{{ link.label }}</span>
+              <span class="cl-value">{{ link.value }}</span>
+            </div>
+            <span class="cl-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <div class="info-card card">
+          <h3 class="info-title">Languages</h3>
+          <div class="lang-list">
+            <div class="lang-item" *ngFor="let l of store.languages()">
+              <span class="lang-name">{{ l.name }}</span>
+              <div class="lang-bars">
+                <span class="lang-bar"
+                      *ngFor="let n of [1,2,3,4,5]"
+                      [class.filled]="n <= l.bars">
+                </span>
+              </div>
+              <span class="lang-level">{{ l.level }}</span>
+            </div>
+          </div>
+
+          <h3 class="info-title" style="margin-top: 28px">Interests</h3>
+          <div class="interests">
+            <div class="interest" *ngFor="let i of store.interests()">
+              <span class="interest-icon">{{ i.icon }}</span>
+              {{ i.label }}
+            </div>
+          </div>
+
+          <div class="location-box">
+            <span class="loc-icon">◎</span>
+            <div>
+              <div class="loc-label">Location</div>
+              <div class="loc-value">{{ store.personal().location }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

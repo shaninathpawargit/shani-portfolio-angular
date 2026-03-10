@@ -1,0 +1,69 @@
+<section class="hero section-pad" id="home">
+  <div class="container hero-grid">
+
+    <!-- Left -->
+    <div class="hero-left">
+      <div class="hero-badge tag">
+        <span class="badge-pulse"></span>
+        Senior Software Engineer · 7.5+ Years
+      </div>
+
+      <h1 class="hero-name">
+        {{ store.firstName() }}
+        <em class="name-serif">{{ store.lastName() }}.</em>
+      </h1>
+
+      <p class="hero-tagline">{{ store.personal().tagline }}</p>
+      <p class="hero-summary">{{ store.personal().summary }}</p>
+
+      <div class="hero-stats">
+        <div class="stat" *ngFor="let s of store.stats()">
+          <span class="stat-value">{{ s.value }}</span>
+          <span class="stat-label">{{ s.label }}</span>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Get in touch <span>→</span></a>
+        <a href="#experience" class="btn btn-ghost">View timeline</a>
+      </div>
+    </div>
+
+    <!-- Profile Card -->
+    <div class="hero-right">
+      <div class="profile-card">
+        <div class="pc-glow"></div>
+        <div class="pc-avatar">{{ store.personal().initials }}</div>
+        <div class="pc-name">{{ store.personal().name }}</div>
+        <div class="pc-role">{{ store.personal().title }}</div>
+        <div class="pc-company">&#64; Vinz Global / NICE</div>
+
+        <div class="pc-tags">
+          <span class="tag">Angular 21</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag teal">Open to Work</span>
+          <span class="tag">Micro-Frontend</span>
+          <span class="tag">NgRx Signals</span>
+          <span class="tag teal">Pune, IN</span>
+        </div>
+
+        <div class="pc-achievements">
+          <div class="achievement" *ngFor="let a of achievements">
+            <span class="achievement-value">{{ a.value }}</span>
+            <span class="achievement-label">{{ a.label }}</span>
+          </div>
+        </div>
+
+        <div class="pc-links">
+          <a [href]="store.personal().linkedin" target="_blank" class="pc-link">
+            <span class="pc-link-icon">in</span>LinkedIn
+          </a>
+          <a [href]="store.personal().github" target="_blank" class="pc-link">
+            <span class="pc-link-icon">gh</span>GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
